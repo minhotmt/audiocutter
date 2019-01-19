@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.example.minko.mp3cutter.Activity.CuttedActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="262dp"
+        android:background="@drawable/bg_tien_trinh"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:src="@drawable/ic_tientrinh_thanhcong" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Happy"
+            android:textAlignment="center"
+            android:textSize="@dimen/_25sdp" />
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"/>
+
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="0:00:05"
+            android:gravity="left"
+            android:textColor="@color/grid_line"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:text="0:20:05"
+            android:textColor="@color/grid_line"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="@dimen/_30sdp"
+        android:weightSum="3">
+
+        <ImageButton
+            android:id="@+id/btnPre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:padding="@dimen/_10sdp"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:src="@drawable/ic_forward2" />
+
+        <ImageButton
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:padding="@dimen/_10sdp"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:src="@drawable/ic_pause" />
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:padding="@dimen/_10sdp"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:src="@drawable/ic_forward1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSetAs"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorAccent"
+        android:paddingLeft="@dimen/_20sdp"
+        android:paddingRight="@dimen/_20sdp"
+        android:text="@string/set_as"
+        android:textColor="#fff"
+        android:textSize="@dimen/_20sdp" />
+
+</LinearLayout>

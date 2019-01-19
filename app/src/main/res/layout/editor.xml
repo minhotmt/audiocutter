@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/**
+ * Copyright (c) 2007, Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+        <com.example.minko.mp3cutter.WaveformView
+            android:id="@+id/waveform"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <com.example.minko.mp3cutter.MarkerView
+            android:paddingLeft="@dimen/_28sdp"
+            android:id="@+id/startmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/start_marker"
+            android:scaleY="0.7"
+            android:scaleX="0.7"
+            android:paddingTop="@dimen/_25sdp"
+            android:nextFocusDown="@+id/endmarker"
+            android:src="@drawable/ic_keo1" />
+
+        <com.example.minko.mp3cutter.MarkerView
+            android:paddingBottom="@dimen/_25sdp"
+            android:id="@+id/endmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/end_marker"
+            android:nextFocusUp="@+id/startmarker"
+            android:nextFocusDown="@+id/info"
+            android:scaleY="0.7"
+            android:scaleX="0.7"
+            android:paddingRight="@dimen/_28sdp"
+            android:src="@drawable/ic_keo2" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/info"
+        style="@style/AudioFileInfoOverlayText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:nextFocusUp="@+id/endmarker"
+        android:nextFocusDown="@+id/play" />
+
+    <LinearLayout
+        style="@style/ToolbarBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#fff"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/mark_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center"
+            android:labelFor="@+id/starttext"
+            android:text="@string/start_label"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/starttext"
+            android:layout_width="70dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="30dip"
+            android:gravity="center"
+            android:focusable="false"
+            android:background="#fff"
+            android:inputType="number|numberDecimal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/mark_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="right"
+            android:labelFor="@+id/endtext"
+            android:text="@string/end_label"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_weight="1"
+            android:focusable="false"
+            android:background="#fff"
+            android:id="@+id/endtext"
+            android:layout_width="70dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#fff"
+        style="@style/ToolbarBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="62dip"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/rew"
+            style="@android:style/MediaButton"
+            android:layout_width="64dip"
+            android:layout_height="52dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="6dip"
+            android:contentDescription="@string/rewind"
+            android:src="@drawable/ic_forward2" />
+
+        <ImageButton
+            android:id="@+id/play"
+            style="@android:style/MediaButton"
+            android:layout_width="71dip"
+            android:layout_height="52dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="6dip"
+            android:contentDescription="@string/play"
+            android:src="@drawable/bt_play" />
+
+        <ImageButton
+            android:id="@+id/ffwd"
+            style="@android:style/MediaButton"
+            android:layout_width="64dip"
+            android:layout_height="52dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginBottom="6dip"
+            android:contentDescription="@string/ffwd"
+            android:src="@drawable/ic_forward1" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:padding="@dimen/_4sdp"
+            android:id="@+id/btnCancel"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_buton"
+            android:textColor="@color/colorAccent"
+            android:text="@string/delete_cancel_button"/>
+        <Button
+            android:padding="@dimen/_4sdp"
+            android:id="@+id/btnReset"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_buton"
+            android:textColor="@color/colorAccent"
+            android:text="@string/reset_button"/>
+        <Button
+            android:padding="@dimen/_4sdp"
+            android:id="@+id/btnCut"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/my_bg_button"
+            android:textColor="#fff"
+            android:text="@string/cut_button"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/HorizontalDividerTop" />
+
+    <LinearLayout style="@style/HorizontalDividerBottom" />
+
+
+</LinearLayout>

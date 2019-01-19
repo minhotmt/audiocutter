@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.minko.mp3cutter.Activity.HomeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="@string/label_home"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:paddingLeft="@dimen/_25sdp"
+        android:paddingRight="@dimen/_25sdp"
+        android:src="@drawable/bg_test" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnCut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bt_cat_nhac"
+            android:drawableTop="@drawable/ic_cat_nhac"
+            android:text="Cut audio"
+            android:textColor="#fff"
+            android:textSize="@dimen/_15sdp" />
+
+        <Button
+            android:id="@+id/btnMerge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bt_cat_nhac"
+            android:drawableTop="@drawable/ic_ghep_nhac"
+            android:text="Merge audio"
+            android:textColor="#fff"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnConvert"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bt_cat_nhac"
+            android:drawableTop="@drawable/ic_doi_dinh_dang"
+            android:text="Convert"
+            android:textColor="#fff"
+            android:textSize="@dimen/_15sdp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bt_cat_nhac"
+            android:drawableTop="@drawable/ic_cat_nhac"
+            android:text="Cut audio"
+            android:textColor="#fff"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_weight="1"
+        android:background="@drawable/bt_cat_nhac"
+        android:drawableTop="@drawable/ic_cat_nhac"
+        android:text="Cut audio"
+        android:textColor="#fff"
+        android:textSize="24sp" />
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.design.widget.BottomNavigationView>
+</LinearLayout>
