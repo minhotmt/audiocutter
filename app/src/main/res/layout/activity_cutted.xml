@@ -22,6 +22,7 @@
             android:src="@drawable/ic_tientrinh_thanhcong" />
 
         <TextView
+            android:textColor="@color/colorAccent"
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,42 +32,47 @@
     </LinearLayout>
 
     <SeekBar
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"/>
 
     <LinearLayout
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2">
         <TextView
+            android:id="@+id/tvProgress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:layout_weight="1"
             android:text="0:00:05"
             android:gravity="left"
-            android:textColor="@color/grid_line"
-            android:textSize="@dimen/_10sdp" />
+            android:textColor="#111"
+            android:textSize="@dimen/_15sdp" />
 
         <TextView
+            android:id="@+id/tvDuration"
             android:gravity="right"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_weight="1"
             android:text="0:20:05"
-            android:textColor="@color/grid_line"
-            android:textSize="@dimen/_10sdp" />
+            android:textColor="#111"
+            android:textSize="@dimen/_15sdp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
-        android:padding="@dimen/_30sdp"
+        android:padding="@dimen/_10sdp"
         android:weightSum="3">
 
         <ImageButton
@@ -75,7 +81,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#fff"
-            android:padding="@dimen/_10sdp"
             android:scaleX="0.6"
             android:scaleY="0.6"
             android:src="@drawable/ic_forward2" />
@@ -86,7 +91,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#fff"
-            android:padding="@dimen/_10sdp"
             android:scaleX="0.6"
             android:scaleY="0.6"
             android:src="@drawable/ic_pause" />
@@ -97,7 +101,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#fff"
-            android:padding="@dimen/_10sdp"
             android:scaleX="0.6"
             android:scaleY="0.6"
             android:src="@drawable/ic_forward1" />
@@ -106,11 +109,11 @@
     <Button
         android:id="@+id/btnSetAs"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/colorAccent"
-        android:paddingLeft="@dimen/_20sdp"
-        android:paddingRight="@dimen/_20sdp"
+        android:background="@drawable/my_bg_button"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingRight="@dimen/_30sdp"
         android:text="@string/set_as"
         android:textColor="#fff"
         android:textSize="@dimen/_20sdp" />

@@ -30,8 +30,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -41,6 +39,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
+import com.example.minko.mp3cutter.Adapter.CustomCursorAdapter;
 import com.example.minko.mp3cutter.R;
 import com.example.minko.mp3cutter.soundfile.SoundFile;
 
@@ -94,7 +93,8 @@ public class RingdroidSelectActivity
     private static final int INTERNAL_CURSOR_ID = 0;
     private static final int EXTERNAL_CURSOR_ID = 1;
     private SearchView mFilter;
-    private SimpleCursorAdapter mAdapter;
+//    private SimpleCursorAdapter mAdapter;
+    private CustomCursorAdapter mAdapter;
     private boolean mWasGetContentIntent;
     private boolean mShowAll;
     private Cursor mInternalCursor;
@@ -129,26 +129,43 @@ public class RingdroidSelectActivity
         setContentView(R.layout.media_select);
 
         try {
-            mAdapter = new SimpleCursorAdapter(
+//            mAdapter = new SimpleCursorAdapter(
+//                    this,
+//                    // Use a template that displays a text view
+//                    R.layout.media_row,
+//                    null,
+//                    // Map from database columns...
+//                    new String[]{
+//                            MediaStore.Audio.Media.TITLE,
+//                            MediaStore.Audio.Media.SIZE,
+//                            MediaStore.Audio.Media.DURATION,
+//                            MediaStore.Audio.Media._ID,
+//                            MediaStore.Audio.Media._ID
+//                    },
+//                    // To widget ids in the row layout...
+//                    new int[]{
+//                            R.id.row_title,
+//                            R.id.row_size,
+//                            R.id.row_duration,
+//                            R.id.row_icon},
+//                    0);
+
+            mAdapter = new CustomCursorAdapter(
                     this,
                     // Use a template that displays a text view
-                    R.layout.media_select_row,
+                    R.layout.media_row,
                     null,
                     // Map from database columns...
                     new String[]{
                             MediaStore.Audio.Media.TITLE,
                             MediaStore.Audio.Media.SIZE,
                             MediaStore.Audio.Media.DURATION,
-                            MediaStore.Audio.Media._ID,
-                            MediaStore.Audio.Media._ID
                     },
                     // To widget ids in the row layout...
                     new int[]{
                             R.id.row_title,
                             R.id.row_size,
-                            R.id.row_duration,
-                            R.id.row_icon},
-                    0);
+                            R.id.row_duration});
 
             setListAdapter(mAdapter);
 
@@ -275,7 +292,6 @@ public class RingdroidSelectActivity
 //            menu.add(0, CMD_SET_AS_DEFAULT, 0, R.string.context_menu_default_notification);
 //        }
 //    }
-
 
 
     private int getUriIndex(Cursor c) {

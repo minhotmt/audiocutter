@@ -184,6 +184,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:padding="@dimen/_4sdp"
             android:id="@+id/btnCancel"
             android:layout_weight="1"
@@ -193,6 +195,8 @@
             android:textColor="@color/colorAccent"
             android:text="@string/delete_cancel_button"/>
         <Button
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:padding="@dimen/_4sdp"
             android:id="@+id/btnReset"
             android:layout_weight="1"
@@ -202,6 +206,8 @@
             android:textColor="@color/colorAccent"
             android:text="@string/reset_button"/>
         <Button
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:padding="@dimen/_4sdp"
             android:id="@+id/btnCut"
             android:layout_weight="1"

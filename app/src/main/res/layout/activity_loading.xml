@@ -25,7 +25,7 @@
             android:progressDrawable="@drawable/circle" />
 
         <TextView
-            android:textSize="@dimen/_25sdp"
+            android:textSize="@dimen/_27sdp"
             android:id="@+id/tvProgress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,6 +33,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:gravity="center"
+            android:textColor="@color/colorAccent"
             android:text="1%" />
     </RelativeLayout>
     <LinearLayout
@@ -48,7 +49,7 @@
             android:id="@+id/btnAddProgress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@drawable/my_bg_button"
             android:text="Run"
             android:textColor="#fff"/>
         <Button
@@ -57,7 +58,7 @@
             android:id="@+id/btnCancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@drawable/my_bg_button"
             android:text="Cancel"
             android:textColor="#fff" />
 

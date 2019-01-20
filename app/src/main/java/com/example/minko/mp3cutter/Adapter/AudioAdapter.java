@@ -1,10 +1,13 @@
-package com.example.minko.mp3cutter;
+package com.example.minko.mp3cutter.Adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.minko.mp3cutter.R;
+import com.example.minko.mp3cutter.Songs;
 
 import java.util.List;
 

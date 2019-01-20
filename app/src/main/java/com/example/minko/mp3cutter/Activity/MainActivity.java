@@ -16,7 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.minko.mp3cutter.AudioAdapter;
+import com.example.minko.mp3cutter.Adapter.AudioAdapter;
 import com.example.minko.mp3cutter.R;
 import com.example.minko.mp3cutter.RecyclerTouchListener;
 import com.example.minko.mp3cutter.Songs;
