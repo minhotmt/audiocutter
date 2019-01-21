@@ -17,7 +17,6 @@
 package com.example.minko.mp3cutter.Activity;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
@@ -31,6 +30,8 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
@@ -49,6 +50,7 @@ import android.widget.Toast;
 
 import com.example.minko.mp3cutter.AfterSaveActionDialog;
 import com.example.minko.mp3cutter.FileSaveDialog;
+import com.example.minko.mp3cutter.Fragment.LoadingFragment;
 import com.example.minko.mp3cutter.MarkerView;
 import com.example.minko.mp3cutter.R;
 import com.example.minko.mp3cutter.SamplePlayer;
@@ -66,9 +68,9 @@ import java.io.StringWriter;
  * the waveform display, current horizontal offset, marker handles,
  * start / end text boxes, and handles all of the buttons and controls.
  */
-public class RingdroidEditActivity extends Activity
+public class RingdroidEditActivity extends AppCompatActivity
         implements MarkerView.MarkerListener,
-        WaveformView.WaveformListener {
+        WaveformView.WaveformListener, LoadingFragment.OnFragmentInteractionListener{
     /**
      * This is a special intent action that means "edit a sound file".
      */
@@ -130,6 +132,7 @@ public class RingdroidEditActivity extends Activity
     private Thread mRecordAudioThread;
     private Thread mSaveSoundFileThread;
     private Button btnCancel, btnReset, btnCut;
+    private Fragment loadingFragment;
 
     //
     // Public methods and protected overrides
@@ -242,6 +245,9 @@ public class RingdroidEditActivity extends Activity
         Log.v("Ringdroid", "EditActivity OnCreate");
         super.onCreate(icicle);
 
+//        initFragment();
+//        showLoadingFragment();
+
         mPlayer = null;
         mIsPlaying = false;
 
@@ -273,6 +279,27 @@ public class RingdroidEditActivity extends Activity
         if (!mFilename.equals("record")) {
             loadFromFile();
         }
+    }
+
+    private void showLoadingFragment() {
+        getSupportFragmentManager().beginTransaction().show(loadingFragment).commit();
+    }
+
+
+    private void initFragment() {
+        loadingFragment = new LoadingFragment();
+        ((LoadingFragment) loadingFragment).setListener(new LoadingFragment.onClickButtonListener() {
+            @Override
+            public void clickButton() {
+                Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().hide(loadingFragment).commit();
+            }
+        });
+
+
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.mainEditActivity, loadingFragment, LoadingFragment.class.getName()).commit();
     }
 
     private void closeThread(Thread thread) {
@@ -1194,7 +1221,10 @@ public class RingdroidEditActivity extends Activity
         mProgressDialog.setTitle(R.string.progress_dialog_saving);
         mProgressDialog.setIndeterminate(true);
         mProgressDialog.setCancelable(false);
-        mProgressDialog.show();
+//        mProgressDialog.show();
+        initFragment();
+        showLoadingFragment();
+
 
         // Save the sound file in a background thread
         mSaveSoundFileThread = new Thread() {
@@ -1247,6 +1277,10 @@ public class RingdroidEditActivity extends Activity
                         // Creating the .wav file also failed. Stop the progress dialog, show an
                         // error message and exit.
                         mProgressDialog.dismiss();
+
+
+
+
                         if (outFile.exists()) {
                             outFile.delete();
                         }
@@ -1505,4 +1539,11 @@ public class RingdroidEditActivity extends Activity
         e.printStackTrace(new PrintWriter(writer));
         return writer.toString();
     }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+
+    }
+
 }

@@ -26,17 +26,16 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Happy"
+            android:text="Happy.mp3"
             android:textAlignment="center"
             android:textSize="@dimen/_25sdp" />
+        <SeekBar
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"/>
     </LinearLayout>
-
-    <SeekBar
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"/>
 
     <LinearLayout
         android:layout_marginRight="@dimen/_10sdp"

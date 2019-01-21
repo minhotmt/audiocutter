@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
 /**
  * Copyright (c) 2007, Google Inc.
  *
@@ -17,16 +19,17 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#fff"
+    android:id="@+id/mainEditActivity"
     android:orientation="vertical">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="0px"
@@ -137,42 +140,39 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
         android:background="#fff"
         style="@style/ToolbarBackground"
         android:layout_width="fill_parent"
-        android:layout_height="62dip"
+        android:layout_height="wrap_content"
         android:gravity="center">
 
         <ImageButton
+            android:scaleY="0.7"
+            android:scaleX="0.7"
             android:id="@+id/rew"
             style="@android:style/MediaButton"
-            android:layout_width="64dip"
-            android:layout_height="52dip"
-            android:layout_marginTop="6dip"
-            android:layout_marginBottom="6dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/rewind"
             android:src="@drawable/ic_forward2" />
 
         <ImageButton
+            android:scaleY="0.7"
+            android:scaleX="0.7"
             android:id="@+id/play"
             style="@android:style/MediaButton"
-            android:layout_width="71dip"
-            android:layout_height="52dip"
-            android:layout_marginTop="6dip"
-            android:layout_marginBottom="6dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/play"
             android:src="@drawable/bt_play" />
 
         <ImageButton
+            android:scaleY="0.7"
+            android:scaleX="0.7"
             android:id="@+id/ffwd"
             style="@android:style/MediaButton"
-            android:layout_width="64dip"
-            android:layout_height="52dip"
-            android:layout_marginTop="6dip"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="6dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/ffwd"
             android:src="@drawable/ic_forward1" />
 

@@ -52,7 +52,6 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
         time.setText(cursor.getString(Duration_index));
 
 
-
     }
 
 }
