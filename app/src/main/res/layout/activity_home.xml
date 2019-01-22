@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.example.minko.mp3cutter.Activity.HomeActivity">
 
@@ -18,81 +20,224 @@
         android:textStyle="bold" />
 
 
-    <ImageView
-        android:layout_marginBottom="@dimen/_15sdp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        android:paddingLeft="@dimen/_25sdp"
-        android:paddingRight="@dimen/_25sdp"
-        android:src="@drawable/bg_test" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/banner"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnCut"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bt_cat_nhac"
-            android:drawableTop="@drawable/ic_cat_nhac"
-            android:text="Cut audio"
-            android:textColor="#fff"
-            android:textSize="@dimen/_15sdp" />
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/btn_cut"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
-        <Button
-            android:id="@+id/btnMerge"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bt_cat_nhac"
-            android:drawableTop="@drawable/ic_ghep_nhac"
-            android:text="Merge audio"
-            android:textColor="#fff"
-            android:textSize="@dimen/_15sdp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cut_audio"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_cat_nhac" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Cut Audio"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/btn_merge"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/merge_audio"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_ghep_nhac" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/merge_audio"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnConvert"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bt_cat_nhac"
-            android:drawableTop="@drawable/ic_doi_dinh_dang"
-            android:text="Convert"
-            android:textColor="#fff"
-            android:textSize="@dimen/_15sdp" />
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/btn_convert"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bt_cat_nhac"
-            android:drawableTop="@drawable/ic_cat_nhac"
-            android:text="Cut audio"
-            android:textColor="#fff"
-            android:textSize="@dimen/_15sdp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/convert"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_doi_dinh_dang" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/convert"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/btn_cut_video"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cut_video"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_cat_nhac" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cut_video"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_weight="1"
-        android:background="@drawable/bt_cat_nhac"
-        android:drawableTop="@drawable/ic_cat_nhac"
-        android:text="Cut audio"
-        android:textColor="#fff"
-        android:textSize="24sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/btn_my_studio"
+            android:layout_width="340dp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_my_studio"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_studio" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/my_studio"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
     <android.support.design.widget.BottomNavigationView
+        android:background="#fff"
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        app:menu="@menu/navigation" />
 </LinearLayout>

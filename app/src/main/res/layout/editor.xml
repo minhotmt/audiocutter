@@ -78,6 +78,7 @@
         android:nextFocusDown="@+id/play" />
 
     <LinearLayout
+        android:id="@+id/line1"
         style="@style/ToolbarBackground"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -100,13 +101,14 @@
             android:textStyle="bold" />
 
         <EditText
+            android:layout_gravity="left"
             android:layout_weight="1"
             android:id="@+id/starttext"
             android:layout_width="70dip"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginRight="30dip"
-            android:gravity="center"
+            android:gravity="left"
             android:focusable="false"
             android:background="#fff"
             android:inputType="number|numberDecimal"
@@ -126,6 +128,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:layout_gravity="left"
             android:layout_weight="1"
             android:focusable="false"
             android:background="#fff"
@@ -133,13 +136,14 @@
             android:layout_width="70dip"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
-            android:gravity="center"
+            android:gravity="left"
             android:inputType="number|numberDecimal"
             android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/line2"
         android:background="#fff"
         style="@style/ToolbarBackground"
         android:layout_width="fill_parent"
@@ -147,8 +151,8 @@
         android:gravity="center">
 
         <ImageButton
-            android:scaleY="0.7"
-            android:scaleX="0.7"
+            android:scaleY="0.5"
+            android:scaleX="0.5"
             android:id="@+id/rew"
             style="@android:style/MediaButton"
             android:layout_width="wrap_content"
@@ -157,8 +161,8 @@
             android:src="@drawable/ic_forward2" />
 
         <ImageButton
-            android:scaleY="0.7"
-            android:scaleX="0.7"
+            android:scaleY="0.5"
+            android:scaleX="0.5"
             android:id="@+id/play"
             style="@android:style/MediaButton"
             android:layout_width="wrap_content"
@@ -167,8 +171,8 @@
             android:src="@drawable/bt_play" />
 
         <ImageButton
-            android:scaleY="0.7"
-            android:scaleX="0.7"
+            android:scaleY="0.5"
+            android:scaleX="0.5"
             android:id="@+id/ffwd"
             style="@android:style/MediaButton"
             android:layout_width="wrap_content"
@@ -178,6 +182,7 @@
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/line3"
         android:layout_marginBottom="@dimen/_40sdp"
         android:weightSum="3"
         android:orientation="horizontal"

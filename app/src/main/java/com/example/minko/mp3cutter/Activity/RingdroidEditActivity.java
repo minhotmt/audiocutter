@@ -44,6 +44,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -285,17 +287,25 @@ public class RingdroidEditActivity extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().show(loadingFragment).commit();
     }
 
+    private void hideLoadingFragment() {
+        getSupportFragmentManager().beginTransaction().hide(loadingFragment).commit();
+    }
+
 
     private void initFragment() {
         loadingFragment = new LoadingFragment();
         ((LoadingFragment) loadingFragment).setListener(new LoadingFragment.onClickButtonListener() {
             @Override
-            public void clickButton() {
-                Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
-                getSupportFragmentManager().beginTransaction().hide(loadingFragment).commit();
+            public void clickCancel() {
+                finish();
+            }
+
+            @Override
+            public void clickRun() {
+                Toast.makeText(getApplicationContext(), "Run Background", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
-
 
 
         getSupportFragmentManager().beginTransaction()
@@ -392,6 +402,15 @@ public class RingdroidEditActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.edit_options, menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Cut audio");
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
         return true;
     }
 
@@ -727,11 +746,7 @@ public class RingdroidEditActivity extends AppCompatActivity
                 this, mFilename);
         mTitle = metadataReader.mTitle;
         mArtist = metadataReader.mArtist;
-
         String titleLabel = mTitle;
-        if (mArtist != null && mArtist.length() > 0) {
-            titleLabel += " - " + mArtist;
-        }
         setTitle(titleLabel);
 
         mLoadingLastUpdateTime = getCurrentTime();
@@ -850,7 +865,6 @@ public class RingdroidEditActivity extends AppCompatActivity
                         formatTime(mMaxPos) + " " +
                         getResources().getString(R.string.time_seconds);
         mInfo.setText(mCaption);
-
         updateDisplay();
     }
 
@@ -1223,8 +1237,8 @@ public class RingdroidEditActivity extends AppCompatActivity
         mProgressDialog.setCancelable(false);
 //        mProgressDialog.show();
         initFragment();
+        ((LinearLayout)findViewById(R.id.mainEditActivity)).removeAllViews();
         showLoadingFragment();
-
 
         // Save the sound file in a background thread
         mSaveSoundFileThread = new Thread() {
@@ -1351,6 +1365,11 @@ public class RingdroidEditActivity extends AppCompatActivity
                         afterSavingRingtone(title,
                                 finalOutPath,
                                 duration);
+
+//                        Toast.makeText(getApplicationContext(), "Cutted", Toast.LENGTH_SHORT).show();
+                        ((ProgressBar) loadingFragment.getView().findViewById(R.id.progressBar)).setProgress(100);
+                        ((TextView) loadingFragment.getView().findViewById(R.id.tvProgress)).setText(((ProgressBar) loadingFragment.getView().findViewById(R.id.progressBar)).getProgress()+"%");
+
                         Intent intent = new Intent(RingdroidEditActivity.this, CuttedActivity.class);
                         intent.putExtra("Uri", finalOutPath);
                         startActivity(intent);
@@ -1417,7 +1436,7 @@ public class RingdroidEditActivity extends AppCompatActivity
 
         // If Ringdroid was launched to get content, just return
         if (mWasGetContentIntent) {
-            finish();
+//            finish();
             return;
         }
 
@@ -1430,7 +1449,7 @@ public class RingdroidEditActivity extends AppCompatActivity
                     Toast.LENGTH_SHORT)
                     .show();
             //111
-            finish();
+//            finish();
             return;
         }
 
@@ -1497,7 +1516,7 @@ public class RingdroidEditActivity extends AppCompatActivity
         AfterSaveActionDialog dlog = new AfterSaveActionDialog(
                 this, message);
 //        dlog.show();
-        finish();
+//        finish();
     }
 
     private void chooseContactForRingtone(Uri uri) {

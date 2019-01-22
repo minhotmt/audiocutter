@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_share"
+        android:title="Camera"
+        android:icon="@drawable/ic_share_white_24dp"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_home"
+        android:title="Send"
+        android:icon="@drawable/ic_home_white_24dp"
+        app:showAsAction="always" />
+</menu>

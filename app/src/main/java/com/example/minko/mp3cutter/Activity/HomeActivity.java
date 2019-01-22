@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,14 +16,15 @@ import com.example.minko.mp3cutter.R;
 public class HomeActivity extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_READ_MEDIA = 1;
-    private Button btnCut, btnMerge, btnConvert;
+    private CardView btnCut, btnMerge, btnConvert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().hide();
 
-        btnCut = findViewById(R.id.btnCut);
+        btnCut = findViewById(R.id.btn_cut);
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {

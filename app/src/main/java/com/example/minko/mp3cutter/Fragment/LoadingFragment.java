@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.minko.mp3cutter.R;
 
@@ -22,14 +23,14 @@ import com.example.minko.mp3cutter.R;
  */
 public class LoadingFragment extends Fragment {
 
-    private onClickButtonListener listener;
-    private Button btnCancel;
-
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private onClickButtonListener listener;
+    private Button btnCancel, btnRun;
+    private TextView tvProgress;
+    private ProgressBar progressBar;
     private View rootView;
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -39,10 +40,6 @@ public class LoadingFragment extends Fragment {
 
     public LoadingFragment() {
         // Required empty public constructor
-    }
-
-    public void setListener(onClickButtonListener listener) {
-        this.listener = listener;
     }
 
     /**
@@ -61,6 +58,10 @@ public class LoadingFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    public void setListener(onClickButtonListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -83,14 +84,29 @@ public class LoadingFragment extends Fragment {
 
     private void initView() {
         btnCancel = rootView.findViewById(R.id.btnCancel);
+        btnRun = rootView.findViewById(R.id.btnRunBG);
+        progressBar = rootView.findViewById(R.id.progressBar);
+        progressBar.setProgress(50);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.clickButton();
+                listener.clickCancel();
+            }
+        });
+
+        btnRun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.clickRun();
 
             }
         });
+
+        tvProgress = rootView.findViewById(R.id.tvProgress);
+        tvProgress.setText(progressBar.getProgress() + " %");
+
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -132,6 +148,7 @@ public class LoadingFragment extends Fragment {
     }
 
     public interface onClickButtonListener {
-        void clickButton();
+        void clickCancel();
+        void clickRun();
     }
 }
