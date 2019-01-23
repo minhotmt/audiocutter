@@ -19,4 +19,12 @@
     <color name="type_bkgnd_music">#88000000</color>
     <color name="type_bkgnd_unsupported">#88cccccc</color>
     <color name="white">#fff</color>
+    <color name="yellow">#ff0</color>
+    <color name="green">#0f0</color>
+    <color name="shadow_color">#FF000000</color>
+    <color name="line_button">#565758</color>
+    <color name="black_translucent">#50000000</color>
+    <color name="line_color">#36b669</color>
+
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.minko.mp3cutter;
+package com.example.minko.mp3cutter.Model;
 
 public class Songs {
     private long mSongID;

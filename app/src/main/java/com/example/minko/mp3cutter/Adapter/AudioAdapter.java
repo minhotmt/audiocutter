@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.minko.mp3cutter.R;
-import com.example.minko.mp3cutter.Songs;
+import com.example.minko.mp3cutter.Model.Songs;
 
 import java.util.List;
 

@@ -5,17 +5,23 @@
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_danh_gia"
             android:title="@string/rate"
-            android:showAsAction="always|withText"/>
+            android:enabled="true"
+            android:iconTint="@color/yellow"
+            android:showAsAction="ifRoom"/>
         <item
+            android:enabled="true"
+            android:iconTint="@color/colorPrimaryDark"
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_share"
             android:title="@string/share"
-            android:showAsAction="always|withText"/>
+            android:showAsAction="ifRoom"/>
         <item
+            android:enabled="true"
+            android:iconTint="@color/green"
             android:id="@+id/nav_favorite"
             android:icon="@drawable/ic_thong_tin"
             android:title="@string/about"
-            android:showAsAction="always|withText"/>
+            android:showAsAction="ifRoom"/>
     </group>
 
 </menu>

@@ -13,13 +13,6 @@
         android:layout_weight="5"
         app:cardCornerRadius="@dimen/_25sdp"
         android:layout_margin="@dimen/_6sdp">
-
-        <!--<ImageView-->
-            <!--android:id="@+id/imgLabel"-->
-            <!--android:padding="@dimen/_3sdp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/ic_tientrinh_thanhcong" />-->
         <TextView
             android:textStyle="bold"
             android:textSize="@dimen/_25sdp"
@@ -48,9 +41,10 @@
             android:layout_alignParentTop="true"
             android:text="Hello"
             android:textColor="@color/title"
-            android:textSize="@dimen/_18sdp"/>
+            android:textSize="@dimen/_16sdp"/>
 
         <LinearLayout
+            android:layout_marginTop="@dimen/_1sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">

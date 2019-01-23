@@ -26,22 +26,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:padding="@dimen/_15sdp">
+        android:padding="@dimen/_12sdp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/edtText"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_35sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/bg_search"
                 android:hint="@string/hint_search"
                 android:inputType="textCapSentences|textAutoCorrect"
                 android:lines="1"
-                android:background="@drawable/bg_search"
                 android:paddingLeft="20sp"
                 android:scrollHorizontally="true" />
 
             <ImageButton
+                android:scaleX="0.8"
+                android:scaleY="0.8"
                 android:id="@+id/imgSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,30 +53,17 @@
                 android:background="@null"
                 android:paddingRight="5sp"
                 android:scaleType="fitCenter"
-                android:scaleX="0.8"
-                android:scaleY="0.8"
-                android:src="@drawable/ic_action_search" />
-
+                android:foregroundGravity="center_vertical"
+                android:src="@drawable/ic_search_black_40dp" />
         </RelativeLayout>
-
-        <!--<EditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:background="@drawable/bg_search"-->
-            <!--android:gravity="center"-->
-            <!--android:hint="@string/enter_keyword"-->
-            <!--android:padding="@dimen/_4sdp"-->
-            <!--android:textSize="@dimen/_16sdp" />-->
     </LinearLayout>
-
-    <!--android:id="@+id/android:list"-->
 
     <ListView
         android:id="@+id/lv_audio"
         android:layout_width="fill_parent"
         android:layout_height="0px"
         android:layout_weight="1">
+
         <requestFocus />
     </ListView>
 

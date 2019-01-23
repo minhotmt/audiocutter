@@ -1,5 +1,6 @@
 package com.example.minko.mp3cutter.Activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -8,15 +9,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ProgressBar;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.minko.mp3cutter.R;
-import com.example.minko.mp3cutter.Songs;
+import com.example.minko.mp3cutter.Model.Songs;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class CuttedActivity extends AppCompatActivity {
 
@@ -24,6 +27,7 @@ public class CuttedActivity extends AppCompatActivity {
     private Songs songs;
     private MediaPlayer mPlayer = new MediaPlayer();
     private SeekBar seekBar;
+    private Button btnSetAs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class CuttedActivity extends AppCompatActivity {
 
         tvTitle = findViewById(R.id.tvTitle);
         seekBar = findViewById(R.id.seekBar);
+        btnSetAs = findViewById(R.id.btnSetAs);
         String uriAudio = getIntent().getStringExtra("Uri");
 
         try {
@@ -56,8 +61,21 @@ public class CuttedActivity extends AppCompatActivity {
             }
         }.start();
 
-
+        btnSetAs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
     }
+
+    private void showDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_set_as);
+        dialog.show();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

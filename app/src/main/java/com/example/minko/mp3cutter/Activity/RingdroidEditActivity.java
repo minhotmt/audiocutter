@@ -72,7 +72,7 @@ import java.io.StringWriter;
  */
 public class RingdroidEditActivity extends AppCompatActivity
         implements MarkerView.MarkerListener,
-        WaveformView.WaveformListener, LoadingFragment.OnFragmentInteractionListener{
+        WaveformView.WaveformListener, LoadingFragment.OnFragmentInteractionListener {
     /**
      * This is a special intent action that means "edit a sound file".
      */
@@ -400,8 +400,8 @@ public class RingdroidEditActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.edit_options, menu);
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.edit_options, menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Cut audio");
@@ -414,30 +414,30 @@ public class RingdroidEditActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.action_save).setVisible(true);
-        menu.findItem(R.id.action_reset).setVisible(true);
-        menu.findItem(R.id.action_about).setVisible(true);
-        return true;
-    }
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//        super.onPrepareOptionsMenu(menu);
+//        menu.findItem(R.id.action_save).setVisible(true);
+//        menu.findItem(R.id.action_reset).setVisible(true);
+//        menu.findItem(R.id.action_about).setVisible(true);
+//        return true;
+//    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_save:
-                onSave();
-                return true;
-            case R.id.action_reset:
-                resetPositions();
-                mOffsetGoal = 0;
-                updateDisplay();
-                return true;
-            default:
-                return false;
-        }
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.action_save:
+//                onSave();
+//                return true;
+//            case R.id.action_reset:
+//                resetPositions();
+//                mOffsetGoal = 0;
+//                updateDisplay();
+//                return true;
+//            default:
+//                return false;
+//        }
+//    }
 
 
     @Override
@@ -1237,7 +1237,7 @@ public class RingdroidEditActivity extends AppCompatActivity
         mProgressDialog.setCancelable(false);
 //        mProgressDialog.show();
         initFragment();
-        ((LinearLayout)findViewById(R.id.mainEditActivity)).removeAllViews();
+        ((LinearLayout) findViewById(R.id.mainEditActivity)).removeAllViews();
         showLoadingFragment();
 
         // Save the sound file in a background thread
@@ -1291,8 +1291,6 @@ public class RingdroidEditActivity extends AppCompatActivity
                         // Creating the .wav file also failed. Stop the progress dialog, show an
                         // error message and exit.
                         mProgressDialog.dismiss();
-
-
 
 
                         if (outFile.exists()) {
@@ -1368,7 +1366,7 @@ public class RingdroidEditActivity extends AppCompatActivity
 
 //                        Toast.makeText(getApplicationContext(), "Cutted", Toast.LENGTH_SHORT).show();
                         ((ProgressBar) loadingFragment.getView().findViewById(R.id.progressBar)).setProgress(100);
-                        ((TextView) loadingFragment.getView().findViewById(R.id.tvProgress)).setText(((ProgressBar) loadingFragment.getView().findViewById(R.id.progressBar)).getProgress()+"%");
+                        ((TextView) loadingFragment.getView().findViewById(R.id.tvProgress)).setText(((ProgressBar) loadingFragment.getView().findViewById(R.id.progressBar)).getProgress() + "%");
 
                         Intent intent = new Intent(RingdroidEditActivity.this, CuttedActivity.class);
                         intent.putExtra("Uri", finalOutPath);

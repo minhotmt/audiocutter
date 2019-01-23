@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">MP3Cutter</string>
     <string name="main_activity_label">Ringdroid</string>
 
@@ -149,7 +149,6 @@
     <string name="cut_button">CUT</string>
     <string name="reset_button">RESET</string>
     <string name="save_format">Save format</string>
-    <string name="name">Name:</string>
     <string name="type">Use as:</string>
     <string name="enter_keyword">Enter keywords to search</string>
     <string name="label_home">Audio MP3 Cutter</string>
@@ -167,8 +166,66 @@
     <string name="cut_video">Cut Video</string>
     <string name="my_studio">My Studio</string>
     <string name="rate">Rate</string>
-    <string name="share">Share</string>
+
     <string name="about">About</string>
     <string name="hint_search">Enter keywords to search</string>
+    <string name="megabyte">MB</string>
+    <string name="kilobyte">KB</string>
+    <string name="short_seconds">s</string>
+    <string name="trimming_progress">Trimming..</string>
+    <string name="video_saved_at">Save to : $%1s</string>
+    <string name="wantdelete">Delete!</string>
+    <string name="agree">agree</string>
+    <string name="done">Done</string>
+    <string name="error">Error</string>
+    <string name="no">No</string>
+
+    <string name="duration_format" translatable="false"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="durationformatshort" translatable="false"><xliff:g id="format">%2$d:%3$02d</xliff:g></string>
+    <string name="durationformatlong" translatable="false"><xliff:g id="format">%1$d:%2$02d:%3$02d</xliff:g></string>
+    <string name="search">Search</string>
+
+
+    <string name="combine_two_strings" translatable="false">%1$s | %2$s</string>
+    <string name="ringtone_set">Ringtone set.</string>
+    <string name="set_ringtone">Set Ringtone!</string>
+    <string name="write_setting_text">Ringtone make requiers permission to \'Write Settings\' in order to set your ringtone.\n After granting permission, try setting your ringtone again.</string>
+    <string name="permission_required">Permission required.</string>
+    <string name="permission_required_desc">Allow access your ringtones and music library</string>
+    <string name="allow">Allow</string>
+    <string name="contacts">Contacts</string>
+    <string name="search_library">Search..</string>
+    <string name="wantdeletee">Delete!</string>
+    <string name="delete_video">Delete</string>
+    <string name="share">Share</string>
+    <string name="sharevs">Share with</string>
+    <string name="khongxacdinh">Unknown</string>
+
+
+    //text xml
+    <string name="maycat"><![CDATA[Mp3 & Video]]></string>
+    <string name="mp3video">Cutter</string>
+    <string name="catnhac">\nAudio Cut</string>
+    <string name="catvideo">\nVideo Cut</string>
+    <string name="thuvienmp3">\nLibrary Audio</string>
+    <string name="thuvienvideo">\nLibrary Video</string>
+    <string name="moreapp">\nMore App</string>
+    <string name="rateapp">\nRate</string>
+    <string name="shareapp">\nShare</string>
+    <string name="history">Audio Cut</string>
+    <string name="history2">Video Cut</string>
+    <string name="audiocut">History</string>
+    <string name="videocut">History</string>
+    <string name="videoon">Video on</string>
+    <string name="audioon">Audio on</string>
+    <string name="thietbi">Device</string>
+    <string name="videocuting">Video Cutter</string>
+    <string name="nhapten">Name input..</string>
+    <string name="name">Name</string>
+    <string name="no_videopayer_found">No video found</string>
+    <string name="save_as">Save as:</string>
+    <string name="music_messenger">Âm báo tin nhắn</string>
+    <string name="music_call">Nhạc chuông</string>
+    <string name="music_alarm">Nhạc Báo thức</string>
 
 </resources>

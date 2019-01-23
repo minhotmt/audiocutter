@@ -16,7 +16,7 @@ import com.example.minko.mp3cutter.R;
 public class HomeActivity extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_READ_MEDIA = 1;
-    private CardView btnCut, btnMerge, btnConvert;
+    private CardView btnCut, btnMerge, btnConvert, btnCutVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         btnCut = findViewById(R.id.btn_cut);
+        btnCutVideo = findViewById(R.id.btn_cut_video);
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
@@ -35,6 +36,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RingdroidSelectActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnCutVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VideoSelectActivity.class);
                 startActivity(intent);
             }
         });

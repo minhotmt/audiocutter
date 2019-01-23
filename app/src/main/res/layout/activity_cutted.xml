@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="262dp"
+        android:layout_height="@dimen/_230sdp"
         android:background="@drawable/bg_tien_trinh"
         android:orientation="vertical">
 
@@ -22,6 +22,7 @@
             android:src="@drawable/ic_tientrinh_thanhcong" />
 
         <TextView
+            android:layout_marginBottom="@dimen/_27sdp"
             android:textColor="@color/colorAccent"
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"

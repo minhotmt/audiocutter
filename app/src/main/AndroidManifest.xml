@@ -22,10 +22,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.CuttedActivity"></activity>
+        <activity android:name=".Activity.VideoTrimActivity"></activity>
+        <activity android:name=".Activity.VideoSelectActivity" />
+        <activity android:name=".Activity.CuttedActivity" />
         <activity android:name=".Activity.MainActivity" />
-        <activity
-            android:name=".Activity.HomeActivity">
+        <activity android:name=".Activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,6 +36,7 @@
         <activity android:name=".Activity.EditActivity" />
         <activity android:name=".Activity.RingdroidEditActivity" />
         <activity android:name=".Activity.RingdroidSelectActivity" />
+        <activity android:name=".Activity.VideoHistoryActivity" />
     </application>
 
 </manifest>
